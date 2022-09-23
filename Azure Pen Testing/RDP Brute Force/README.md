@@ -1,6 +1,6 @@
 # RDP Brute Force Lab
 
-The purpose of this lab is to detect and alert brute forcing on machines that has RDP enabled. In this demonstration, I've performed a brute force attack using Hydra. I will provide POC that includes commands, syntax, and screenshots. 
+The purpose of this lab is to detect and alert brute forcing on machines that has RDP enabled. In this simple demonstration, I've performed a brute force attack using Hydra. I will provide POC that includes commands, syntax, and screenshots. 
 
 
 
@@ -10,27 +10,28 @@ The purpose of this lab is to detect and alert brute forcing on machines that ha
 
 From an attacker perspective, once you use footprinting methodlogy and gather enough information. Next step is to scan and enumerate the subnet to see what devices or ports are available in the network. In this scenario I will use a widely used common scanning tool called NMAP.
 
-- **Bullet 1:** As you can see on the result on the nmap scan, RDP is open on this Windows server. Depending on the scenario, it's best not to use these NMAP flags. This scan is very loud and can get detected by most modern security solutions (EX: IDS, IPS, SIEM, EDR, XDR). But for the sake of demonstration purposes, I will run the scans anyway to see what ports are open on the server.
+![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/1.%20rdp%20bf.png)
+
+- **Bullet 1:** As you can see on the result on the nmap scan, RDP is open on this Windows server. If hackers see RDP or SSH open, they will try to exploit these protocol to gain access. Depending on the scenario, it's best not to use these NMAP flags. This scan is very loud and can get detected by most modern security solutions *(EX: IDS, IPS, SIEM, EDR, XDR)*. But for the sake of demonstration purposes, I will run the scans anyway to see what ports are open on the server.
   ```
   nmap -sC -sV -vvv -T5 -oN report.txt 10.0.0.4
   ```
 
-- **Bullet 2:** I performed a brute force attack on the open RDP using Hydra. The purpose of this 
+- **Bullet 2:** Once RDP is discovered, I performed a brute force attack on the open RDP using Hydra. This should also generate the traffic and alerts I set up within Sentinel.
    ```
    hydra -t 1 -V -l winserver -P rockyou.txt rdp://10.0.0.4
    ```
    
-![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/1.%20rdp%20bf.png)
 
 ***
 
 
-# Session 2
+# Phase 2
 
-Next, it's time to see if we can detect the traffic and alerts.
+Next, it's time to see if we can detect the traffic and alerts on Microsoft Sentinel. I set created an alert that will auto create an incident if detects multiple failed sign-ins based on **Event Code 4625.** The event code documents every failed login attempts on a local machine.
 
-- **Bullet 1:** 
-- **Bullet 2:** 
+- **Bullet 1:** The alerts and configuration I set up picked up the possible brute forcing attack.
+- **Bullet 2:** I've assigned the incidient to myself.
 
 ![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/2.%20rdp%20bf.png)
 
