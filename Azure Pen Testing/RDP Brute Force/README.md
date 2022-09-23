@@ -11,9 +11,9 @@ The purpose of this lab is to detect and alert brute forcing on machines that ha
 First step from an attacker perspective is to scan the subnet to see what devices or ports are available in the network.
 
 
-- **Bullet 1:** As you can see on the result on the nmap scan, RDP is open on this Windows workstation/server. Depending on the scenario, it's best not to use these NMAP flags. This scan is very loud and can get detected by modern IDS or IPS.
+- **Bullet 1:** As you can see on the result on the nmap scan, RDP is open on this Windows workstation/server. Depending on the scenario, it's best not to use these NMAP flags. This scan is very loud and can get detected by most modern security solutions (EX: IDS, IPS, SIEM, EDR, XDR). But for the sake of demonstration purposes, I will run the scans anyway.
   ```
-  nmap -
+  nmap -sC -sV -vvv -T5 -oN report.txt 10.0.0.4
   ```
 
 - **Bullet 2:** I performed a brute force attacking using Hydra.
