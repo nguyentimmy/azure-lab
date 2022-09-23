@@ -1,6 +1,6 @@
 # RDP Brute Force Lab
 
-I BF into this machine. 
+The purpose of this lab is to detect and alert brute forcing on machines that has RDP enabled. In this demonstration, I've performed a brute force attack using Hydra. 
 
 ***
 
