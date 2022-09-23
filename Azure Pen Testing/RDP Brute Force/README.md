@@ -30,10 +30,11 @@ From an attacker perspective, once you use footprinting methodlogy and gather en
 
 Next, it's time to see if we can detect the traffic and alerts on Microsoft Sentinel. I set created an alert that will auto create an incident if detects multiple failed sign-ins based on **Event Code 4625.** The event code documents every failed login attempts on a local machine.
 
+![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/2.%20rdp%20bf.png)
+
 - **Bullet 1:** The alerts and configuration I set up picked up the possible brute forcing attack.
 - **Bullet 2:** I've assigned the incidient to myself.
 
-![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/2.%20rdp%20bf.png)
 
 ***
 
