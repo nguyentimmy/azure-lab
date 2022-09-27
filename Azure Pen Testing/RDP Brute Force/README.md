@@ -8,7 +8,7 @@ The purpose of this lab is to detect and alert brute forcing on machines that ha
 
 # Phase 1 
 
-From an attacker perspective, after the footprinting methodlogy. Next step is to scan and enumerate the subnet to see what devices or ports are available in the network. In this scenario I will use a widely used common scanning tool called NMAP.
+Rough Draft
 
 ![alt text](https://github.com/nguyentimmy/azure-lab/blob/main/Azure%20Pen%20Testing/RDP%20Brute%20Force/Pictures/1.%20rdp%20bf.png)
 
