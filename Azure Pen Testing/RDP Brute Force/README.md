@@ -1,6 +1,6 @@
 # RDP Brute Force Lab
 
-The purpose of this lab is to detect and alert brute forcing on machines hosted on Azure. I am using security solutions such as Microsoft Sentinel and other tools. In this simple demonstration. I will provide POC that includes commands, syntax, and screenshots. 
+The purpose of this lab is to detect and alert brute forcing activities on my Azure environment. I am using cloud based native security solutions such as Microsoft Sentinel. In this simple demonstration. I will provide POC that includes commands, syntax, and screenshots. 
 
 
 ***
